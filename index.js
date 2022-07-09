@@ -18,12 +18,12 @@ bot.on('ready', () => {
 });
 
 let angry = false;
-let baduser = '';
+let baduser;
 
 bot.on('message', msg => {
   if (msg.content.toLowerCase() == "im sorry" || msg.content.toLowerCase() == "i'm sorry"  && angry && msg.guild.members.cache.get(msg.author.id) == baduser) {
     angry = false;
-    baduser = '';
+    baduser = null;
     msg.reply("Thank you, im sorry for snapping, things just get really overwheming sometimes");
   }
 
@@ -31,6 +31,13 @@ bot.on('message', msg => {
 
 	  const args = msg.content.slice(process.env.PREFIX.length).trim().split(/ +/g);
 	  const command = args.shift().toLowerCase();
+
+    if (angry) {
+      let user = bot.users.cache.get(baduser);
+
+      msg.reply("When " + user.username +  " apoligizes ill come back");
+      return;
+    }
 
     if (command.toLowerCase() == "grigori") {
       msg.reply("Come back with whiskey or dont come back");
@@ -51,11 +58,6 @@ bot.on('message', msg => {
       return;
     };
 
-    if (angry) {
-      msg.reply("When " + msg.author.username +  " apoligizes ill come back");
-      return;
-    }
-
     console.info(`Called command: ${command}`);
 
     try {
@@ -63,7 +65,7 @@ bot.on('message', msg => {
       if (value) {
         console.log("ping was mad");
         angry = true;
-        baduser = msg.guild.members.cache.get(msg.author.id);
+        baduser = msg.author.id;
       }
     } catch (error) {
       console.error(error);
