@@ -32,17 +32,17 @@ bot.on('message', msg => {
 	  const args = msg.content.slice(process.env.PREFIX.length).trim().split(/ +/g);
 	  const command = args.shift().toLowerCase();
 
-    if (args.join(' ').toLowerCase() == "grigori") {
-      msg.reply("Grigori does not take orders. Come back with whiskey or dont come back");
-    } else if (args.join(' ').toLowerCase() == "saeval") {
+    if (command.toLowerCase() == "grigori") {
+      msg.reply("Come back with whiskey or dont come back");
+    } else if (command.toLowerCase() == "saeval") {
       msg.reply("Got any secrets?");
-    } else if (args.join(' ').toLowerCase() == "holtz") {
+    } else if (command.toLowerCase() == "holtz") {
       msg.reply("DEMOCRACYYYYYYYYYYYY!!");
-    } else if (args.join(' ').toLowerCase() == "nine") {
+    } else if (command.toLowerCase() == "nine") {
       msg.reply("Nine isnt home right now, please leave a message after the beep");
-    } else if (args.join(' ').toLowerCase() == "anguillo") {
+    } else if (command.toLowerCase() == "anguillo") {
       msg.reply("Who do you need removed?");
-    } else if (args.join(' ').toLowerCase() == "emile") {
+    } else if (command.toLowerCase() == "emile") {
       msg.reply("Caw caw motherfucker");
     }
 
