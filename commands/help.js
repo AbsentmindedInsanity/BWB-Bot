@@ -11,6 +11,9 @@ module.exports = {
             description += '\n' + '**Command**: ' + capitalizeFirstLetter(botCommands[keys[i]].name) + '\n' + '**Description**: ' + capitalizeFirstLetter(botCommands[keys[i]].description) +'\n';
         }
 
+        let people = "\nGrigori\nSaeval\nHoltz\nNine\nAnguillo\nEmile\nSeagull\nLovejoy\nBaruke\nBeckon\nHermia\nJackie\nBerthold\nDaeafae\nRachel\n";
+        description += '\n' + "**Command:** " + "The Person" + "\n" + "**People**" + "" + people
+
         const baseEmbed = new MessageEmbed()
             .setColor('#0099ff')
             .setTitle('Bard Bot Commands')
