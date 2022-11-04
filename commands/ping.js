@@ -5,7 +5,7 @@ module.exports = {
     var rand = Math.random() * 100;
 
     if (msg.guild.members.cache.get(msg.author.id) == 245024147674103809 && rand >= 50) {
-      msg.reply('I am *pretty* sure you are trying to anagonize me, but sure. Pong!')
+      msg.reply('I am *pretty* sure you are trying to antagonize me, but sure. Pong!')
 
       if (rand >= 90) {
         msg.reply('You know what nevermind. Fuck this im out, not going to deal with this today.');
