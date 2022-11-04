@@ -11,7 +11,7 @@ module.exports = {
             description += '\n' + '**Command**: ' + capitalizeFirstLetter(botCommands[keys[i]].name) + '\n' + '**Description**: ' + capitalizeFirstLetter(botCommands[keys[i]].description) +'\n';
         }
 
-        let people = "\nGrigori\nSaeval\nHoltz\nNine\nAnguillo\nEmile\nSeagull\nLovejoy\nBaruke\nBeckon\nHermia\nJackie\nBerthold\nDaeafae\nRachel\n";
+        let people = "\nGrigori\nSaeval\nHoltz\nNine\nAnguillo\nEmile\nSeagull\nLovejoy\nBaruke\nBeckon\nHermia\nJackie\nBerthold\nDaeafae\nRachel\nLorna\nMelody\nMolly\nAlastair\nJasper\nEleanor\n";
         description += '\n' + "**Command:** " + "The Person" + "\n" + "**People**" + "" + people
 
         const baseEmbed = new MessageEmbed()
